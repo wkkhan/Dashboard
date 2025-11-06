@@ -14,7 +14,7 @@ function AppLayout() {
   };
 
   return (
-    <div className="d-flex flex-column min-vh-100 bg-light">
+    <div className="d-flex flex-column min-vh-100 bg-light waleed">
       <header className="navbar navbar-expand-lg navbar-dark bg-primary">
         <div className="container-fluid">
           <span className="navbar-brand fw-semibold">Essaly Merchant Console</span>

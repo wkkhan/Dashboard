@@ -416,6 +416,15 @@ html {
 			}
 		}
 
+		.hamburger.is-active .hamburger-inner {
+			background-color: $white;
+
+			&:after,
+			&:before {
+				background-color: $white;
+			}
+		}
+
 		/* <---------------! DateRangePicker !---------------> */
 		.date-picker-field {
 			color: $white;

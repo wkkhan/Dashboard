@@ -8,7 +8,7 @@ import { RedirectIfAuthenticated, RequireAuth } from '../lib/guards';
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <RequireAuth />,
+    // element: <RequireAuth />,
     children: [
       {
         element: <AppLayout />,

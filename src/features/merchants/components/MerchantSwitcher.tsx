@@ -29,18 +29,18 @@ export function MerchantSwitcher() {
   };
 
   if (isLoading) {
-    return <span className="text-white-50 small">Loading merchants…</span>;
+    return <span className="text-muted small">Loading merchants…</span>;
   }
 
   if (!merchants.length) {
-    return <span className="text-white-50 small">No merchants available</span>;
+    return <span className="text-muted small">No merchants available</span>;
   }
 
   const currentValue = pendingId ?? activeMerchantId ?? merchants[0]?.merchantId ?? '';
 
   return (
     <div className="d-flex align-items-center">
-      <label htmlFor="merchant-switcher" className="form-label me-2 mb-0 text-white small">
+      <label htmlFor="merchant-switcher" className="form-label me-2 mb-0 text-dark small" style={{ color: '#6b7280' }}>
         Merchant
       </label>
       <select

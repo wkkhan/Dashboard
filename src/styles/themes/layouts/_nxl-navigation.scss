@@ -19,10 +19,22 @@
 		display: flex;
 		padding: 15px 30px;
 		align-items: center;
+		justify-content: center;
 		height: $header-height;
 		background: $white;
 		border-right: 1px solid $border-color;
 		border-bottom: 1px solid $border-color;
+
+		.b-brand {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.logo {
+			max-height: 40px;
+			width: auto;
+		}
 
 		.logo-sm {
 			display: none;

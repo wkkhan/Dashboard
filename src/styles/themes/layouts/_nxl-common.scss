@@ -283,6 +283,13 @@
 	}
 }
 
+.hamburger-box {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	position: relative;
+}
+
 .hamburger-inner {
 	display: block;
 	top: 50%;
@@ -302,10 +309,6 @@
 		border-radius: 4px;
 		position: absolute;
 		transition: transform 0.15s ease;
-	}
-
-	&::after,
-	&::before {
 		content: "";
 		display: block;
 	}
@@ -318,6 +321,7 @@
 		bottom: -6px;
 	}
 }
+
 
 .hamburger--arrowturn.is-active .hamburger-inner {
 	transform: rotate(-180deg);
@@ -483,7 +487,7 @@
 	}
 
 	.progress-1 {
-		background-color: #3454d1;
+		background-color: $primary;
 	}
 
 	.progress-2 {

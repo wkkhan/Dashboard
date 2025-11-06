@@ -8,13 +8,17 @@
 	z-index: 1025;
 	position: fixed;
 	left: $navigation-width;
+	top: 0;
 	color: $brand-light;
-	background: $white;
+	background: #ffffff !important;
+	height: $header-height;
 	min-height: $header-height;
-	border-bottom: 1px solid $border-color;
+	border-bottom: 1px solid #e5e7eb !important;
 
 	.header-wrapper {
 		display: flex;
+		align-items: center;
+		height: 100%;
 		padding: 0 30px;
 
 		ul {
@@ -22,17 +26,56 @@
 			display: inline-flex;
 		}
 
+		.nxl-head-mobile-toggler {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			padding: 0;
+			border: none;
+			background: transparent;
+			text-decoration: none;
+			cursor: pointer;
+
+			&:hover {
+				.hamburger-inner {
+					background-color: $primary;
+
+					&::after,
+					&::before {
+						background-color: $primary;
+					}
+				}
+			}
+		}
+
 		.nxl-lavel-mega-menu-toggle,
 		.nxl-navigation-toggle {
 			line-height: normal;
 
 			a {
-				color: $brand-dark;
+				color: $header-link-color;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 40px;
+				height: 40px;
+				border-radius: $radius-circle;
+				transition: all 0.3s ease;
+
+				&:hover {
+					color: $primary;
+					background: $brand-light;
+				}
+
+				svg {
+					color: inherit;
+				}
 			}
 
 			i {
 				line-height: 1;
 				font-size: $font-24;
+				color: $header-link-color;
 
 				&.feather-arrow-left {
 					font-size: $font-20;
@@ -57,6 +100,12 @@
 			color: $header-link-color;
 			border-radius: $radius-circle;
 
+			>i,
+			svg {
+				font-size: $font-20;
+				color: $header-link-color;
+			}
+
 			>i {
 				font-size: $font-20;
 			}
@@ -68,6 +117,11 @@
 				color: $primary;
 				text-decoration: none;
 				background: $brand-light;
+
+				>i,
+				svg {
+					color: $primary;
+				}
 
 				.hamburger {
 					.hamburger-inner {
@@ -629,6 +683,18 @@
 			margin-right: 15px;
 			border-radius: 50%;
 		}
+
+		// Ensure all SVG icons in header use correct color
+		svg {
+			color: $header-link-color;
+			transition: color 0.3s ease;
+		}
+
+		.nxl-head-link:hover svg,
+		.nxl-head-link.active svg,
+		.nxl-head-link:focus svg {
+			color: $primary;
+		}
 	}
 }
 
@@ -637,6 +703,50 @@ html {
 		.nxl-header {
 			left: $navigation-collapsed-width;
 		}
+	}
+
+	// Ensure header border is light in white theme
+	&:not(.app-skin-dark) {
+		.nxl-header {
+			border-bottom: 1px solid #e5e7eb !important;
+		}
+	}
+}
+
+// Navigation toggle visibility - Desktop by default
+.navigation-up-1600 {
+	display: block;
+}
+
+.navigation-down-1600 {
+	display: none;
+}
+
+// Mobile toggler hidden on desktop
+.nxl-head-mobile-toggler {
+	display: none !important;
+}
+
+@media (max-width: 1400px) {
+	.navigation-up-1600 {
+		display: none;
+	}
+
+	.navigation-down-1600 {
+		display: block;
+	}
+}
+
+@media (max-width: 1024px) {
+	// Hide desktop navigation toggle on mobile
+	.navigation-up-1600,
+	.navigation-down-1600 {
+		display: none !important;
+	}
+
+	// Show mobile toggler on mobile
+	.nxl-head-mobile-toggler {
+		display: inline-flex !important;
 	}
 }
 

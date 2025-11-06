@@ -1,0 +1,12 @@
+:root {
+  --bs-primary: #2f5de7;
+  --bs-primary-rgb: 47, 93, 231;
+}
+
+.btn-primary {
+  font-weight: 600;
+}
+
+.navbar-brand {
+  letter-spacing: 0.03em;
+}
